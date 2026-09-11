@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHOPPING BAG | ALEXANDER MCQUEEN</title>
+  <meta name="description" content="Review your Alexander McQueen luxury shopping bag and proceed to express checkout.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/atelier.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div id="page-curtain"><div class="curtain-text">SHOPPING BAG</div></div>
+
+  <header class="header">
+    <div class="header-container">
+      <button class="mobile-nav-toggle">&#9776;</button>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="women.html" class="nav-link">Women</a></li>
+          <li><a href="men.html" class="nav-link">Men</a></li>
+          <li><a href="discover.html" class="nav-link">Discover</a></li>
+          <li><a href="company.html" class="nav-link">Heritage</a></li>
+        </ul>
+      </nav>
+      <a href="index.html" class="brand-logo">ALEXANDER MCQUEEN</a>
+      <div class="nav-actions">
+        <button class="nav-action-btn" onclick="openSearchModal()">Search</button>
+        <a href="appointment.html" class="nav-action-btn">Appointments</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section-padding">
+    <div class="container">
+      <h1 class="heading-section" style="margin-bottom: 40px; text-align: center;">YOUR SHOPPING BAG</h1>
+
+      <div class="grid-2" style="grid-template-columns: 1.8fr 1fr; gap: 4vw; align-items: flex-start;">
+        <!-- BAG ITEMS LIST -->
+        <div id="bag-page-items" style="display: flex; flex-direction: column; gap: 24px;">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- ORDER SUMMARY -->
+        <div style="background-color: var(--bg-cream); padding: 40px; border: 1px solid var(--border-medium); position: sticky; top: 120px;">
+          <h3 style="font-family: var(--font-serif); font-size: 1.5rem; text-transform: uppercase; margin-bottom: 24px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px;">ORDER SUMMARY</h3>
+          
+          <div style="display: flex; justify-content: space-between; margin-bottom: 14px; font-size: 0.9rem;">
+            <span>Subtotal</span>
+            <span id="summary-subtotal" style="font-weight: 600;">$0 USD</span>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; margin-bottom: 14px; font-size: 0.9rem;">
+            <span>Express Delivery</span>
+            <span style="color: var(--accent-gold); font-weight: 600;">COMPLIMENTARY</span>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; margin-bottom: 24px; font-size: 0.9rem;">
+            <span>Signature Gift Packaging</span>
+            <span style="color: var(--accent-gold); font-weight: 600;">INCLUDED</span>
+          </div>
+
+          <div style="border-top: 1px solid var(--border-strong); padding-top: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 700;">
+            <span>Estimated Total</span>
+            <span id="summary-total">$0 USD</span>
+          </div>
+
+          <button class="btn btn-primary" style="width: 100%; padding: 20px; margin-bottom: 16px;" onclick="openCheckoutModal()">Proceed To Express Checkout</button>
+          
+          <p style="font-size: 0.72rem; color: var(--text-muted); text-align: center;">
+            Complimentary 30-day returns &bull; 100% Secure SSL Payment &bull; Official McQueen Certificate of Authenticity Included.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKOUT MODAL -->
+  <div id="checkout-modal" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(18,18,18,0.5); backdrop-filter: blur(8px); z-index: 15000; opacity: 0; visibility: hidden; transition: all var(--transition-smooth); display: flex; align-items: center; justify-content: center;">
+    <div style="width: 100%; max-width: 580px; background-color: var(--bg-surface); padding: 40px; border: 1px solid var(--border-medium); max-height: 90vh; overflow-y: auto;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; text-transform: uppercase;">EXPRESS CHECKOUT</h3>
+        <button onclick="closeCheckoutModal()" style="font-size: 1.4rem;">&times;</button>
+      </div>
+
+      <form onsubmit="handleSimulatedOrder(event)">
+        <span class="label-uppercase" style="margin-bottom: 12px; display: block;">1. DELIVERY ADDRESS</span>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+          <input type="text" placeholder="First Name" required style="padding: 12px; border: 1px solid var(--border-strong); outline: none;">
+          <input type="text" placeholder="Last Name" required style="padding: 12px; border: 1px solid var(--border-strong); outline: none;">
+        </div>
+        <input type="email" placeholder="Email Address for Tracking" required style="width: 100%; padding: 12px; border: 1px solid var(--border-strong); outline: none; margin-bottom: 16px;">
+        <input type="text" placeholder="Street Address" required style="width: 100%; padding: 12px; border: 1px solid var(--border-strong); outline: none; margin-bottom: 16px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px;">
+          <input type="text" placeholder="City" required style="padding: 12px; border: 1px solid var(--border-strong); outline: none;">
+          <input type="text" placeholder="Postal Code" required style="padding: 12px; border: 1px solid var(--border-strong); outline: none;">
+        </div>
+
+        <span class="label-uppercase" style="margin-bottom: 12px; display: block;">2. PAYMENT METHOD</span>
+        <div style="border: 1px solid var(--border-strong); padding: 16px; margin-bottom: 24px; font-size: 0.85rem;">
+          <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+            <input type="radio" name="payment" checked>
+            <span>Complimentary House Credit / Demo Payment</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 18px;">Place Couture Order</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>ALEXANDER MCQUEEN</h3>
+          <p style="font-size: 0.75rem; color: var(--text-muted);">&copy; 2026 Alexander McQueen. All Rights Reserved.</p>
+        </div>
+        <div class="footer-col">
+          <h4>CUSTOMER CARE</h4>
+          <ul class="footer-links">
+            <li><a href="assistance.html">Online Assistance</a></li>
+            <li><a href="track-order.html">Track My Order</a></li>
+            <li><a href="returns.html">Register Return</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/atelier.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      renderBagPage();
+    });
+
+    function renderBagPage() {
+      const container = document.getElementById("bag-page-items");
+      const cart = window.cartEngine.cart;
+
+      const subtotalEl = document.getElementById("summary-subtotal");
+      const totalEl = document.getElementById("summary-total");
+
+      const totalVal = window.cartEngine.getSubtotal();
+      if (subtotalEl) subtotalEl.textContent = `$${totalVal.toLocaleString()} USD`;
+      if (totalEl) totalEl.textContent = `$${totalVal.toLocaleString()} USD`;
+
+      if (!container) return;
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div style="text-align: center; padding: 80px 20px; background-color: var(--bg-cream); border: 1px solid var(--border-subtle);">
+            <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 12px;">Your Shopping Bag is empty</h2>
+            <p style="margin-bottom: 24px; color: var(--text-muted);">Explore our Autumn / Winter 2026 Ready-to-Wear and Leather Goods.</p>
+            <a href="women.html" class="btn btn-primary">Discover Women</a>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = cart.map((item, idx) => `
+        <div style="display: flex; gap: 24px; padding: 24px; background-color: var(--bg-surface); border: 1px solid var(--border-subtle); align-items: center;">
+          <img src="${item.image}" alt="${item.name}" style="width: 110px; height: 140px; object-fit: cover; background-color: var(--bg-cream);">
+          <div style="flex: 1;">
+            <h3 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 6px;">${item.name}</h3>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px;">Color: ${item.color} | Size: ${item.size}</p>
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <div style="display: flex; align-items: center; border: 1px solid var(--border-strong); padding: 4px 10px;">
+                <button onclick="window.cartEngine.updateQuantity(${idx}, -1); renderBagPage();" style="padding: 0 8px; font-weight: bold;">-</button>
+                <span style="font-size: 0.85rem; padding: 0 12px;">${item.quantity}</span>
+                <button onclick="window.cartEngine.updateQuantity(${idx}, 1); renderBagPage();" style="padding: 0 8px; font-weight: bold;">+</button>
+              </div>
+              <button onclick="window.cartEngine.removeItem(${idx}); renderBagPage();" style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted); text-decoration: underline;">Remove Item</button>
+            </div>
+          </div>
+          <div style="text-align: right; font-family: var(--font-sans); font-weight: 700; font-size: 1.1rem;">
+            $${(item.price * item.quantity).toLocaleString()} USD
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function openCheckoutModal() {
+      if (window.cartEngine.cart.length === 0) {
+        alert("Your shopping bag is empty.");
+        return;
+      }
+      const modal = document.getElementById("checkout-modal");
+      if (modal) {
+        modal.style.opacity = "1";
+        modal.style.visibility = "visible";
+      }
+    }
+
+    function closeCheckoutModal() {
+      const modal = document.getElementById("checkout-modal");
+      if (modal) {
+        modal.style.opacity = "0";
+        modal.style.visibility = "hidden";
+      }
+    }
+
+    function handleSimulatedOrder(e) {
+      e.preventDefault();
+      const orderNum = `MQ-${Math.floor(100000 + Math.random() * 900000)}`;
+      alert(`Thank you for your order! Your official McQueen Order Reference is #${orderNum}.\n\nA confirmation email and tracking link have been generated.`);
+      window.cartEngine.cart = [];
+      window.cartEngine.save();
+      closeCheckoutModal();
+      window.location.href = `track-order.html?order=${orderNum}`;
+    }
+  </script>
+</body>
+</html>

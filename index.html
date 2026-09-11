@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALEXANDER MCQUEEN | Official Digital House & Atelier</title>
+  <meta name="description" content="Discover the Autumn / Winter 2026 collection by Alexander McQueen. Architectural tailoring, sculptural leather goods, Wishbone loafers, and haute couture craftsmanship.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/atelier.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Page Transition Curtain -->
+  <div id="page-curtain">
+    <div class="curtain-text">ALEXANDER MCQUEEN</div>
+  </div>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    AUTUMN / WINTER 2026 COLLECTION &mdash; COMPLIMENTARY EXPRESS WORLDWIDE DELIVERY & GIFT PACKAGING
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="header-container">
+      <button class="mobile-nav-toggle" aria-label="Toggle Navigation">&#9776;</button>
+
+      <nav>
+        <ul class="nav-links">
+          <li class="nav-item-has-menu">
+            <a href="women.html" class="nav-link">Women</a>
+            <div class="mega-menu">
+              <div class="mega-menu-content">
+                <div class="mega-menu-col">
+                  <h4>CATEGORIES</h4>
+                  <ul class="mega-menu-list">
+                    <li><a href="women.html">New Arrivals</a></li>
+                    <li><a href="women.html?cat=Clothing">Ready-to-Wear</a></li>
+                    <li><a href="women.html?cat=Bags">Manta & Wishbone Bags</a></li>
+                    <li><a href="women.html?cat=Shoes">Rosa Sandals & Boots</a></li>
+                    <li><a href="women.html?cat=Jewellery">Sculptural Jewellery</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-col">
+                  <h4>COLLECTIONS</h4>
+                  <ul class="mega-menu-list">
+                    <li><a href="discover.html">Autumn / Winter 2026</a></li>
+                    <li><a href="discover.html">Savile Row Tailoring</a></li>
+                    <li><a href="discover.html">Iconic Accessories</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-card">
+                  <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80" alt="Women Bag Highlight">
+                  <div class="mega-menu-card-caption">
+                    <span class="label-uppercase" style="color: #fff;">ICONIC PIECE</span>
+                    <h4 style="font-family: var(--font-serif); font-size: 1.4rem;">The Manta Leather Tote</h4>
+                  </div>
+                </div>
+                <div class="mega-menu-card">
+                  <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80" alt="Women Tailoring Highlight">
+                  <div class="mega-menu-card-caption">
+                    <span class="label-uppercase" style="color: #fff;">COUTURE</span>
+                    <h4 style="font-family: var(--font-serif); font-size: 1.4rem;">Hourglass Tailoring</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item-has-menu">
+            <a href="men.html" class="nav-link">Men</a>
+            <div class="mega-menu">
+              <div class="mega-menu-content">
+                <div class="mega-menu-col">
+                  <h4>CATEGORIES</h4>
+                  <ul class="mega-menu-list">
+                    <li><a href="men.html">New Arrivals</a></li>
+                    <li><a href="men.html?cat=Clothing">Tailored Jackets & Coats</a></li>
+                    <li><a href="men.html?cat=Clothing">Silk Jacquard Shirts</a></li>
+                    <li><a href="men.html?cat=Shoes">Oversized Court Sneakers</a></li>
+                    <li><a href="men.html?cat=Bags">Leather Goods</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-col">
+                  <h4>HERITAGE</h4>
+                  <ul class="mega-menu-list">
+                    <li><a href="discover.html">Asymmetric Tailoring</a></li>
+                    <li><a href="company.html">Savile Row Heritage</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu-card" style="grid-column: span 2;">
+                  <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80" alt="Men Highlight">
+                  <div class="mega-menu-card-caption">
+                    <span class="label-uppercase" style="color: #fff;">NEW SEASON</span>
+                    <h4 style="font-family: var(--font-serif); font-size: 1.6rem;">Men's Autumn / Winter 2026</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><a href="discover.html" class="nav-link">Discover</a></li>
+          <li><a href="company.html" class="nav-link">Heritage</a></li>
+        </ul>
+      </nav>
+
+      <a href="index.html" class="brand-logo">ALEXANDER MCQUEEN</a>
+
+      <div class="nav-actions">
+        <button class="nav-action-btn" onclick="openSearchModal()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          Search
+        </button>
+        <a href="appointment.html" class="nav-action-btn">Appointments</a>
+        <button class="nav-action-btn" onclick="window.cartEngine.openDrawer()">
+          Bag <span class="bag-count-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-menu-drawer" class="mobile-menu-drawer">
+    <div class="mobile-menu-header">
+      <span class="brand-logo" style="font-size: 1.2rem;">ALEXANDER MCQUEEN</span>
+      <button onclick="closeMobileMenu()" style="font-size: 1.5rem;">&times;</button>
+    </div>
+    <ul class="mobile-menu-links">
+      <li><a href="women.html">Women</a></li>
+      <li><a href="men.html">Men</a></li>
+      <li><a href="discover.html">Discover</a></li>
+      <li><a href="stores.html">Boutiques</a></li>
+      <li><a href="appointment.html">Book Appointment</a></li>
+      <li><a href="assistance.html">Customer Service</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" style="position: relative; height: calc(100vh - var(--nav-height) - 38px); min-height: 600px; display: flex; align-items: flex-end; padding: 0 4vw 80px; overflow: hidden; background-color: var(--bg-cream);">
+    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=2000&q=90" alt="Autumn Winter 2026 Campaign" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.96);">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(250,248,245,0.2) 0%, rgba(250,248,245,0.85) 100%);"></div>
+
+    <div class="container" style="position: relative; z-index: 2;">
+      <span class="label-uppercase" style="letter-spacing: 0.3em; margin-bottom: 16px; display: block; color: var(--text-primary);">AUTUMN / WINTER 2026</span>
+      <h1 class="heading-hero" style="margin-bottom: 24px;">FORM. CUT. SILHOUETTE.</h1>
+      <p class="body-editorial" style="max-width: 580px; margin-bottom: 36px;">
+        An exploration of anatomical precision and British tailoring heritage, sculpted into fluid light leather and wool crepe gabardine.
+      </p>
+      <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <a href="women.html" class="btn btn-primary">Discover Women</a>
+        <a href="men.html" class="btn btn-outline">Discover Men</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNATURE ATELIER REVEAL SPOTLIGHT BANNER -->
+  <section class="atelier-teaser-banner">
+    <div class="container">
+      <div class="atelier-teaser-grid">
+        <div>
+          <span class="label-uppercase" style="color: var(--accent-gold); margin-bottom: 16px; display: block;">SIGNATURE EXPERIENCE</span>
+          <h2 class="heading-section" style="margin-bottom: 20px;">THE MCQUEEN ATELIER</h2>
+          <p class="body-editorial" style="margin-bottom: 30px;">
+            Step inside our digital atelier to inspect pattern drafting techniques, floating horsehair canvas construction, and 34 hours of hand-moulded Italian calfskin forming.
+          </p>
+          <div style="display: flex; gap: 16px;">
+            <button class="btn btn-primary" onclick="window.atelierEngine.launch('mq-001')">Enter The Atelier</button>
+            <a href="discover.html" class="btn btn-outline">Read Savoir-Faire</a>
+          </div>
+        </div>
+        <div style="position: relative;">
+          <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=85" alt="Manta Atelier Reveal" class="atelier-teaser-img">
+          <div style="position: absolute; bottom: -20px; right: -20px; background-color: var(--bg-surface); padding: 20px 30px; border: 1px solid var(--border-medium); box-shadow: 0 20px 40px rgba(0,0,0,0.06);">
+            <span class="label-uppercase">HAND-MOULDED ARC</span>
+            <p style="font-family: var(--font-serif); font-size: 1.2rem;">The Manta Tote</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED COLLECTION GRID -->
+  <section class="section-padding">
+    <div class="container">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 60px;">
+        <div>
+          <span class="label-uppercase" style="margin-bottom: 10px; display: block;">CURATED SELECTION</span>
+          <h2 class="heading-section">THE COLLECTION</h2>
+        </div>
+        <a href="women.html" class="btn-text">View All Pieces &rarr;</a>
+      </div>
+
+      <div class="grid-4" id="homepage-product-grid">
+        <!-- Rendered dynamically by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL BRAND STORYTELLING -->
+  <section class="section-padding" style="background-color: var(--bg-cream); border-y: 1px solid var(--border-subtle);">
+    <div class="container-narrow" style="text-align: center;">
+      <span class="label-uppercase" style="color: var(--accent-gold); margin-bottom: 20px; display: block;">HOUSE HERITAGE</span>
+      <h2 class="heading-editorial" style="margin-bottom: 30px; font-size: clamp(2rem, 3.5vw, 3.2rem);">
+        "Tailoring is an anatomical study. We shape garments to empower the wearer's poise and stature."
+      </h2>
+      <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.25em; font-weight: 600; color: var(--text-muted); margin-bottom: 40px;">
+        SAVILE ROW ORIGINS &bull; MODERN HAUTE COUTURE
+      </p>
+      <a href="company.html" class="btn btn-outline">Explore House Savoir-Faire</a>
+    </div>
+  </section>
+
+  <!-- CAMPAIGN RUNWAY PREVIEW -->
+  <section class="section-padding-lg">
+    <div class="container">
+      <div class="grid-2" style="align-items: center;">
+        <div style="position: relative; overflow: hidden; background-color: var(--bg-subtle);">
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=85" alt="Runway Atmosphere" style="width: 100%; height: 600px; object-fit: cover;">
+        </div>
+        <div style="padding-left: 3vw;">
+          <span class="label-uppercase" style="margin-bottom: 16px; display: block;">PARIS FASHION WEEK</span>
+          <h2 class="heading-section" style="margin-bottom: 24px;">AUTUMN / WINTER 2026 RUNWAY</h2>
+          <p class="body-editorial" style="margin-bottom: 36px;">
+            Set inside the brutalist glass hall of Palais de Tokyo, the collection juxtaposes raw architectural concrete with soft ivory silks and razor-sharp wool tailoring.
+          </p>
+          <a href="discover.html" class="btn btn-primary">Watch The Runway Film</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNIVERSAL FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>ALEXANDER MCQUEEN</h3>
+          <p class="body-editorial" style="font-size: 0.95rem; margin-bottom: 24px;">
+            British haute couture & architectural luxury. Designed in London, crafted in Italy and France.
+          </p>
+          <p style="font-size: 0.75rem; color: var(--text-muted);">&copy; 2026 Alexander McQueen. All Rights Reserved.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>EXCLUSIVE SERVICES</h4>
+          <ul class="footer-links">
+            <li><a href="assistance.html">Online Assistance</a></li>
+            <li><a href="stores.html">Store Locator</a></li>
+            <li><a href="appointment.html">Book Appointment</a></li>
+            <li><a href="aftercare.html">Product Aftercare</a></li>
+            <li><a href="track-order.html">Track Order</a></li>
+            <li><a href="returns.html">Register Return</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>THE COMPANY</h4>
+          <ul class="footer-links">
+            <li><a href="company.html">House Heritage</a></li>
+            <li><a href="discover.html">Runway Collections</a></li>
+            <li><a href="careers.html">Careers & Atelier</a></li>
+            <li><a href="sustainability.html">Sustainability</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="privacy.html">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>PRIVATE COMMUNICATIONS</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Subscribe to receive invitation-only collection previews and boutique announcements.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+            <button type="submit" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700;">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>UNITED STATES (USD $) &bull; ENGLISH</span>
+        <span>ACCESSIBILITY STATEMENT &bull; COOKIE PREFERENCES</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Side Cart Drawer Container -->
+  <div id="cart-drawer-overlay" class="cart-drawer-overlay" onclick="if(event.target===this) window.cartEngine.closeDrawer()">
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; letter-spacing: 0.15em; text-transform: uppercase;">YOUR SHOPPING BAG</h3>
+        <button onclick="window.cartEngine.closeDrawer()" style="font-size: 1.4rem;">&times;</button>
+      </div>
+      <div id="cart-drawer-items" class="cart-drawer-body">
+        <!-- Rendered by CartEngine -->
+      </div>
+      <div class="cart-drawer-footer">
+        <div style="display: flex; justify-content: space-between; font-size: 1rem; margin-bottom: 20px;">
+          <span>Subtotal</span>
+          <span id="cart-subtotal" style="font-weight: 700;">$0 USD</span>
+        </div>
+        <p style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 20px;">Taxes and express worldwide carbon-neutral shipping calculated at checkout.</p>
+        <a href="bag.html" class="btn btn-primary" style="width: 100%;">Proceed To Checkout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/stores.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/atelier.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Render featured homepage grid
+    document.addEventListener("DOMContentLoaded", () => {
+      const grid = document.getElementById("homepage-product-grid");
+      if (grid) {
+        const featured = getFeaturedProducts().slice(0, 4);
+        grid.innerHTML = featured.map(p => `
+          <div class="product-card">
+            <div class="product-card-image-wrap" onclick="window.location.href='product.html?id=${p.id}'" style="cursor: pointer;">
+              <img src="${p.image}" class="product-card-img main-img" alt="${p.name}">
+              <img src="${p.hoverImage}" class="product-card-img hover-img" alt="${p.name}">
+              ${p.tag ? `<span class="product-card-badge">${p.tag}</span>` : ''}
+              <button class="product-card-wishlist" onclick="event.stopPropagation(); alert('Added to your Private Wishlist.');" title="Add to Wishlist">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </button>
+            </div>
+            <div class="product-card-info">
+              <h4 class="product-card-title"><a href="product.html?id=${p.id}">${p.name}</a></h4>
+              <div class="product-card-meta">
+                <span>${p.color}</span>
+                <span class="product-card-price">$${p.price.toLocaleString()} USD</span>
+              </div>
+              <div style="display: flex; gap: 8px; margin-top: 12px;">
+                <button class="btn btn-outline" style="flex: 1; padding: 8px 0; font-size: 0.65rem;" onclick="window.cartEngine.addItem('${p.id}')">Quick Add</button>
+                <button class="btn btn-outline" style="padding: 8px 12px; font-size: 0.65rem;" onclick="window.atelierEngine.launch('${p.id}')" title="Atelier View">Atelier</button>
+              </div>
+            </div>
+          </div>
+        `).join("");
+      }
+    });
+  </script>
+</body>
+</html>

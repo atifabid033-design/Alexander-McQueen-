@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRODUCT DETAIL | ALEXANDER MCQUEEN</title>
+  <meta name="description" content="Inspect Alexander McQueen luxury product details, craftsmanship, materials, size guide, and atelier reveal.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/atelier.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div id="page-curtain"><div class="curtain-text">ALEXANDER MCQUEEN</div></div>
+
+  <header class="header">
+    <div class="header-container">
+      <button class="mobile-nav-toggle">&#9776;</button>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="women.html" class="nav-link">Women</a></li>
+          <li><a href="men.html" class="nav-link">Men</a></li>
+          <li><a href="discover.html" class="nav-link">Discover</a></li>
+          <li><a href="company.html" class="nav-link">Heritage</a></li>
+        </ul>
+      </nav>
+      <a href="index.html" class="brand-logo">ALEXANDER MCQUEEN</a>
+      <div class="nav-actions">
+        <button class="nav-action-btn" onclick="openSearchModal()">Search</button>
+        <a href="appointment.html" class="nav-action-btn">Appointments</a>
+        <button class="nav-action-btn" onclick="window.cartEngine.openDrawer()">Bag <span class="bag-count-badge" style="display: none;">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PDP MAIN SECTION -->
+  <section class="section-padding" style="padding-top: 40px;">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <div style="margin-bottom: 30px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--text-muted);">
+        <a href="index.html">Home</a> &sol; <a href="women.html" id="pdp-category-link">Collection</a> &sol; <span id="pdp-name-breadcrumb" style="color: var(--text-primary);">Product</span>
+      </div>
+
+      <div class="grid-2" style="grid-template-columns: 1.2fr 1fr; gap: 5vw; align-items: flex-start;">
+        <!-- LEFT: GALLERY -->
+        <div>
+          <div style="position: relative; width: 100%; margin-bottom: 20px; background-color: var(--bg-cream); border: 1px solid var(--border-subtle); overflow: hidden;">
+            <img id="pdp-main-img" src="" alt="Product Image" style="width: 100%; height: auto; display: block; cursor: zoom-in;" onclick="openFullscreenZoom(this.src)">
+            <span class="product-card-badge" id="pdp-badge" style="top: 20px; left: 20px;">Iconic Piece</span>
+          </div>
+
+          <div style="display: flex; gap: 16px; overflow-x: auto;" id="pdp-thumbnails">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- RIGHT: PRODUCT INFO & ATELIER TRIGGER -->
+        <div style="position: sticky; top: 120px;">
+          <span class="label-uppercase" id="pdp-category-tag" style="color: var(--accent-gold); margin-bottom: 12px; display: block;">WOMEN'S BAGS</span>
+          <h1 id="pdp-title" class="heading-section" style="font-size: clamp(2rem, 3vw, 2.8rem); margin-bottom: 16px;">The Manta Sculptural Leather Tote</h1>
+          <p id="pdp-price" style="font-family: var(--font-sans); font-size: 1.4rem; font-weight: 700; margin-bottom: 30px;">$2,890 USD</p>
+
+          <p id="pdp-description" class="body-editorial" style="font-size: 1rem; margin-bottom: 30px;">
+            Architectural leather tote featuring hand-moulded curves inspired by marine rays. Crafted from full-grain calfskin with pale gold anatomical hardware.
+          </p>
+
+          <!-- Color Selector -->
+          <div style="margin-bottom: 28px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 600; margin-bottom: 12px;">
+              <span>Color: <strong id="pdp-selected-color">Warm Ivory</strong></span>
+            </div>
+            <div style="display: flex; gap: 12px;" id="pdp-colors-list">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+
+          <!-- Size Selector -->
+          <div style="margin-bottom: 36px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 600; margin-bottom: 12px;">
+              <span>Select Size</span>
+              <button onclick="toggleSizeGuide()" style="text-decoration: underline; color: var(--text-muted);">Size Guide</button>
+            </div>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;" id="pdp-sizes-list">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px;">
+            <button class="btn btn-primary" style="width: 100%; padding: 20px;" onclick="addPdpToCart()">Add To Shopping Bag</button>
+            
+            <button class="btn btn-outline" style="width: 100%; padding: 18px; border-color: var(--accent-gold); color: var(--text-primary); display: flex; align-items: center; justify-content: center; gap: 10px;" onclick="launchPdpAtelier()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="12 8 8 16 16 16 12 8"></polygon></svg>
+              Launch McQueen Atelier Reveal
+            </button>
+          </div>
+
+          <!-- Accordion Sections -->
+          <div style="border-top: 1px solid var(--border-medium);">
+            <details style="padding: 20px 0; border-bottom: 1px solid var(--border-subtle); cursor: pointer;" open>
+              <summary style="font-family: var(--font-sans); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700;">Craftsmanship & Details</summary>
+              <ul id="pdp-details-list" style="margin-top: 16px; padding-left: 20px; font-size: 0.9rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 8px;">
+                <!-- Rendered by JS -->
+              </ul>
+            </details>
+
+            <details style="padding: 20px 0; border-bottom: 1px solid var(--border-subtle); cursor: pointer;">
+              <summary style="font-family: var(--font-sans); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700;">Material Composition & Care</summary>
+              <div style="margin-top: 16px; font-size: 0.9rem; color: var(--text-secondary);">
+                <p id="pdp-materials" style="margin-bottom: 10px;"></p>
+                <p id="pdp-care"></p>
+              </div>
+            </details>
+
+            <details style="padding: 20px 0; border-bottom: 1px solid var(--border-subtle); cursor: pointer;">
+              <summary style="font-family: var(--font-sans); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700;">Complimentary Delivery & Returns</summary>
+              <p style="margin-top: 16px; font-size: 0.9rem; color: var(--text-secondary);">
+                All McQueen purchases arrive in signature rigid white packaging with silk ribbon. Express global delivery within 2–4 business days. 30-day complimentary returns.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIZE GUIDE MODAL -->
+  <div id="size-guide-modal" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(18,18,18,0.4); backdrop-filter: blur(4px); z-index: 8000; opacity: 0; visibility: hidden; transition: all var(--transition-smooth); display: flex; align-items: center; justify-content: center;">
+    <div style="width: 100%; max-width: 600px; background-color: var(--bg-surface); padding: 40px; border: 1px solid var(--border-medium);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; text-transform: uppercase;">SIZE CONVERSION GUIDE</h3>
+        <button onclick="toggleSizeGuide()" style="font-size: 1.4rem;">&times;</button>
+      </div>
+      <table style="width: 100%; text-align: left; border-collapse: collapse; font-size: 0.85rem;">
+        <thead>
+          <tr style="border-bottom: 2px solid var(--text-primary);">
+            <th style="padding: 10px 0;">ITALY (IT)</th>
+            <th style="padding: 10px 0;">FRANCE (FR)</th>
+            <th style="padding: 10px 0;">UK</th>
+            <th style="padding: 10px 0;">US</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--border-subtle);"><td style="padding: 10px 0;">36</td><td>37</td><td>3</td><td>6</td></tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle);"><td style="padding: 10px 0;">37</td><td>38</td><td>4</td><td>7</td></tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle);"><td style="padding: 10px 0;">38</td><td>39</td><td>5</td><td>8</td></tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle);"><td style="padding: 10px 0;">39</td><td>40</td><td>6</td><td>9</td></tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle);"><td style="padding: 10px 0;">40</td><td>41</td><td>7</td><td>10</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- FULLSCREEN IMAGE ZOOM MODAL -->
+  <div id="zoom-modal" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: var(--bg-surface); z-index: 12000; opacity: 0; visibility: hidden; transition: all var(--transition-fast); display: flex; align-items: center; justify-content: center; cursor: zoom-out;" onclick="closeFullscreenZoom()">
+    <img id="zoom-modal-img" src="" alt="Zoom Image" style="max-width: 90%; max-height: 90vh; object-fit: contain;">
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>ALEXANDER MCQUEEN</h3>
+          <p class="body-editorial" style="font-size: 0.95rem; margin-bottom: 24px;">Haute Couture & Architectural Luxury.</p>
+        </div>
+        <div class="footer-col">
+          <h4>SERVICES</h4>
+          <ul class="footer-links">
+            <li><a href="assistance.html">Online Assistance</a></li>
+            <li><a href="stores.html">Store Locator</a></li>
+            <li><a href="appointment.html">Book Appointment</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>LEGAL</h4>
+          <ul class="footer-links">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="privacy.html">Terms of Sale</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>NEWSLETTER</h4>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+            <button type="submit" style="font-size: 0.75rem; font-weight: 700;">Join</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/atelier.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    let currentPdpProduct = null;
+    let selectedSize = null;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id") || "mq-001";
+      currentPdpProduct = getProductById(id);
+
+      renderPdp();
+    });
+
+    function renderPdp() {
+      if (!currentPdpProduct) return;
+
+      document.title = `${currentPdpProduct.name} | ALEXANDER MCQUEEN`;
+      document.getElementById("pdp-name-breadcrumb").textContent = currentPdpProduct.name;
+      document.getElementById("pdp-category-link").textContent = currentPdpProduct.category;
+      document.getElementById("pdp-category-tag").textContent = `${currentPdpProduct.gender.toUpperCase()}'S ${currentPdpProduct.category.toUpperCase()}`;
+      document.getElementById("pdp-title").textContent = currentPdpProduct.name;
+      document.getElementById("pdp-price").textContent = `$${currentPdpProduct.price.toLocaleString()} USD`;
+      document.getElementById("pdp-description").textContent = currentPdpProduct.description;
+      document.getElementById("pdp-selected-color").textContent = currentPdpProduct.color;
+
+      document.getElementById("pdp-main-img").src = currentPdpProduct.image;
+      document.getElementById("pdp-badge").textContent = currentPdpProduct.tag || "Couture";
+
+      // Thumbnails
+      const thumbsContainer = document.getElementById("pdp-thumbnails");
+      const gallery = currentPdpProduct.gallery || [currentPdpProduct.image, currentPdpProduct.hoverImage];
+      thumbsContainer.innerHTML = gallery.map((imgUrl, idx) => `
+        <div style="width: 90px; height: 110px; border: 1px solid ${idx===0?'var(--text-primary)':'var(--border-subtle)'}; cursor: pointer; flex-shrink: 0;" onclick="switchMainImg('${imgUrl}', this)">
+          <img src="${imgUrl}" alt="Thumb" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+      `).join("");
+
+      // Colors
+      const colorsContainer = document.getElementById("pdp-colors-list");
+      const colors = currentPdpProduct.colorsAvailable || [currentPdpProduct.color];
+      colorsContainer.innerHTML = colors.map(c => `
+        <button style="padding: 10px 20px; font-size: 0.75rem; border: 1px solid ${c===currentPdpProduct.color?'var(--text-primary)':'var(--border-strong)'}; background: ${c===currentPdpProduct.color?'var(--text-primary)':'transparent'}; color: ${c===currentPdpProduct.color?'#fff':'var(--text-primary)'};" onclick="selectColor('${c}')">${c}</button>
+      `).join("");
+
+      // Sizes
+      const sizesContainer = document.getElementById("pdp-sizes-list");
+      const sizes = currentPdpProduct.sizes || ["One Size"];
+      selectedSize = sizes[0];
+      sizesContainer.innerHTML = sizes.map(s => `
+        <button class="pdp-size-btn" style="padding: 12px 24px; font-size: 0.75rem; border: 1px solid ${s===selectedSize?'var(--text-primary)':'var(--border-strong)'}; background: ${s===selectedSize?'var(--text-primary)':'transparent'}; color: ${s===selectedSize?'#fff':'var(--text-primary)'};" onclick="selectPdpSize('${s}', this)">${s}</button>
+      `).join("");
+
+      // Details
+      const detailsList = document.getElementById("pdp-details-list");
+      detailsList.innerHTML = (currentPdpProduct.details || []).map(d => `<li>${d}</li>`).join("");
+
+      document.getElementById("pdp-materials").textContent = `Materials: ${currentPdpProduct.materials || '100% Fine Italian Leather'}`;
+      document.getElementById("pdp-care").textContent = `Care: ${currentPdpProduct.care || 'Specialized dry clean only.'}`;
+    }
+
+    function switchMainImg(url, el) {
+      document.getElementById("pdp-main-img").src = url;
+      document.querySelectorAll("#pdp-thumbnails > div").forEach(d => d.style.borderColor = "var(--border-subtle)");
+      el.style.borderColor = "var(--text-primary)";
+    }
+
+    function selectColor(color) {
+      document.getElementById("pdp-selected-color").textContent = color;
+    }
+
+    function selectPdpSize(size, el) {
+      selectedSize = size;
+      document.querySelectorAll(".pdp-size-btn").forEach(b => {
+        b.style.background = "transparent";
+        b.style.color = "var(--text-primary)";
+      });
+      el.style.background = "var(--text-primary)";
+      el.style.color = "#fff";
+    }
+
+    function addPdpToCart() {
+      if (currentPdpProduct) {
+        window.cartEngine.addItem(currentPdpProduct.id, selectedSize);
+      }
+    }
+
+    function launchPdpAtelier() {
+      if (currentPdpProduct) {
+        window.atelierEngine.launch(currentPdpProduct.id);
+      }
+    }
+
+    function toggleSizeGuide() {
+      const modal = document.getElementById("size-guide-modal");
+      if (modal) {
+        const isActive = modal.style.opacity === "1";
+        modal.style.opacity = isActive ? "0" : "1";
+        modal.style.visibility = isActive ? "hidden" : "visible";
+      }
+    }
+
+    function openFullscreenZoom(src) {
+      const modal = document.getElementById("zoom-modal");
+      const img = document.getElementById("zoom-modal-img");
+      if (modal && img) {
+        img.src = src;
+        modal.style.opacity = "1";
+        modal.style.visibility = "visible";
+      }
+    }
+
+    function closeFullscreenZoom() {
+      const modal = document.getElementById("zoom-modal");
+      if (modal) {
+        modal.style.opacity = "0";
+        modal.style.visibility = "hidden";
+      }
+    }
+  </script>
+</body>
+</html>
